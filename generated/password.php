@@ -111,12 +111,12 @@ use Safe\Exceptions\PasswordException;
  * @throws PasswordException
  *
  */
-function password_hash(string $password, $algo, array $options = null): string
+function password_hash(string $password,  $algo, array $options = null): string
 {
     error_clear_last();
     if ($options !== null) {
         $result = \password_hash($password, $algo, $options);
-    } else {
+    }else {
         $result = \password_hash($password, $algo);
     }
     if ($result === false) {
@@ -124,3 +124,4 @@ function password_hash(string $password, $algo, array $options = null): string
     }
     return $result;
 }
+

@@ -88,7 +88,7 @@ function array_replace_recursive(array $array, array  ...$replacements): array
     error_clear_last();
     if ($replacements !== []) {
         $result = \array_replace_recursive($array, ...$replacements);
-    } else {
+    }else {
         $result = \array_replace_recursive($array);
     }
     if ($result === null) {
@@ -123,7 +123,7 @@ function array_replace(array $array, array  ...$replacements): array
     error_clear_last();
     if ($replacements !== []) {
         $result = \array_replace($array, ...$replacements);
-    } else {
+    }else {
         $result = \array_replace($array);
     }
     if ($result === null) {
@@ -155,12 +155,12 @@ function array_replace(array $array, array  ...$replacements): array
  * @throws ArrayException
  *
  */
-function array_walk_recursive(array &$array, callable $callback, $userdata = null): void
+function array_walk_recursive(array &$array, callable $callback,  $userdata = null): void
 {
     error_clear_last();
     if ($userdata !== null) {
         $result = \array_walk_recursive($array, $callback, $userdata);
-    } else {
+    }else {
         $result = \array_walk_recursive($array, $callback);
     }
     if ($result === false) {
@@ -170,7 +170,7 @@ function array_walk_recursive(array &$array, callable $callback, $userdata = nul
 
 
 /**
- * This function sorts an array such that array indices maintain their
+ * This function sorts an array in descending order such that array indices maintain their
  * correlation with the array elements they are associated with.
  *
  * This is used mainly when sorting associative arrays where the actual
@@ -228,7 +228,7 @@ function arsort(array &$array, int $flags = SORT_REGULAR): void
 
 
 /**
- * This function sorts an array such that array indices maintain
+ * This function sorts an array in ascending order such that array indices maintain
  * their correlation with the array elements they are associated
  * with.  This is used mainly when sorting associative arrays where
  * the actual element order is significant.
@@ -285,7 +285,7 @@ function asort(array &$array, int $flags = SORT_REGULAR): void
 
 
 /**
- * Sorts an array by key in reverse order, maintaining key to data
+ * Sorts an array by key in descending order, maintaining key to data
  * correlations. This is useful mainly for associative arrays.
  *
  * @param array $array The input array.
@@ -340,7 +340,7 @@ function krsort(array &$array, int $flags = SORT_REGULAR): void
 
 
 /**
- * Sorts an array by key, maintaining key to data correlations. This is
+ * Sorts an array by key in ascending order, maintaining key to data correlations. This is
  * useful mainly for associative arrays.
  *
  * @param array $array The input array.
@@ -438,7 +438,7 @@ function natsort(array &$array): void
 
 
 /**
- * This function sorts an array in reverse order (highest to lowest).
+ * This function sorts an array by value in descending order.
  *
  * @param array $array The input array.
  * @param int $flags The optional second parameter flags
@@ -511,8 +511,7 @@ function shuffle(array &$array): void
 
 
 /**
- * This function sorts an array.  Elements will be arranged from
- * lowest to highest when this function has completed.
+ * This function sorts an array by value in ascending order.
  *
  * @param array $array The input array.
  * @param int $flags The optional second parameter flags
@@ -634,3 +633,4 @@ function usort(array &$array, callable $callback): void
         throw ArrayException::createFromPhpError();
     }
 }
+
